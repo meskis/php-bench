@@ -1,0 +1,8 @@
+#!/bin/bash
+
+VERSIONS=( "php:5.6" "php:7.0" "php:7.1" "php:7.2" "php:7.3" "dmitrybalabka/php-jit:latest-7.4")
+
+for x in "${VERSIONS[@]}"
+do
+    docker run -it -v `pwd`/src:/src $x php /src/bench.php
+done
